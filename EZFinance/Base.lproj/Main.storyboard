@@ -470,8 +470,8 @@
         <!--401K Calculator-->
         <scene sceneID="nyq-94-iKL">
             <objects>
-                <viewController id="Cjg-m3-tQa" customClass="_01kCalculatorViewController" customModule="EZFinance" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="aAw-YG-h3Z">
+                <viewController id="Cjg-m3-tQa" customClass="CalculatorViewController" customModule="EZFinance" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aAw-YG-h3Z" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -502,6 +502,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="keyboardDone:" destination="Cjg-m3-tQa" eventType="editingDidEndOnExit" id="TfL-Aq-Oc2"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="75000" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="XHw-Sb-fca">
                                 <rect key="frame" x="186" y="129" width="127" height="30"/>
@@ -509,6 +512,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="keyboardDone:" destination="Cjg-m3-tQa" eventType="editingDidEndOnExit" id="q89-Ce-kUJ"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="3" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="W9a-e6-aYU">
                                 <rect key="frame" x="186" y="167" width="127" height="30"/>
@@ -516,6 +522,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="keyboardDone:" destination="Cjg-m3-tQa" eventType="editingDidEndOnExit" id="h9Y-dx-2ub"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Age:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VpK-KS-AxZ">
                                 <rect key="frame" x="5" y="205" width="173" height="30"/>
@@ -530,6 +539,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="keyboardDone:" destination="Cjg-m3-tQa" eventType="editingDidEndOnExit" id="wxT-GZ-ZkH"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Age of Retirement:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veW-hk-Hvc">
                                 <rect key="frame" x="5" y="243" width="173" height="30"/>
@@ -538,15 +550,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current 401k Balance:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCR-f1-r8m">
-                                <rect key="frame" x="5" y="281" width="173" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Annual Rate of Return %:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSW-cA-IMI">
+                                <rect key="frame" x="5" y="317" width="173" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Annual Rate of Return %:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSW-cA-IMI">
-                                <rect key="frame" x="5" y="319" width="173" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Balance:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osD-rE-4Cz">
+                                <rect key="frame" x="5" y="279" width="173" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
@@ -558,20 +570,19 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="YYg-r5-z33">
-                                <rect key="frame" x="186" y="281" width="127" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="keyboardDone:" destination="Cjg-m3-tQa" eventType="editingDidEndOnExit" id="6vr-Fy-CRs"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="7" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="io5-Uu-R5u">
-                                <rect key="frame" x="186" y="319" width="127" height="30"/>
+                                <rect key="frame" x="186" y="317" width="127" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="keyboardDone:" destination="Cjg-m3-tQa" eventType="editingDidEndOnExit" id="9YQ-yS-t1M"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sSR-8j-gCh">
                                 <rect key="frame" x="16" y="482" width="288" height="30"/>
@@ -593,7 +604,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Employer Match Max %:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuM-OF-Ypi">
                                 <rect key="frame" x="5" y="429" width="178" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -603,6 +614,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="keyboardDone:" destination="Cjg-m3-tQa" eventType="editingDidEndOnExit" id="4LP-Cd-J6x"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="6" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="k3m-n8-EuU">
                                 <rect key="frame" x="186" y="429" width="127" height="30"/>
@@ -610,11 +624,48 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="keyboardDone:" destination="Cjg-m3-tQa" eventType="editingDidEndOnExit" id="sLT-OF-0tn"/>
+                                </connections>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="p62-IJ-g6c">
+                                <rect key="frame" x="186" y="281" width="127" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="keyboardDone:" destination="Cjg-m3-tQa" eventType="editingDidEndOnExit" id="x0Q-Br-10f"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="*Usually 50% or 100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rEr-12-FNi">
+                                <rect key="frame" x="38" y="421" width="107" height="12"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="*Usually 4% or 6%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BjD-1L-m6N">
+                                <rect key="frame" x="49" y="453" width="89" height="12"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Note: Omit the % when entering percentages" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ssf-xB-G0g">
+                                <rect key="frame" x="52" y="71" width="217" height="12"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="0D2-zE-oYY"/>
+                        <connections>
+                            <action selector="backgroundTouch:" destination="Cjg-m3-tQa" eventType="touchDown" id="0ov-i3-ICf"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="401K Calculator" id="9OH-m4-NqS"/>
                     <connections>
@@ -623,9 +674,9 @@
                         <outlet property="annualSalaryIncreaseTextField" destination="W9a-e6-aYU" id="sOS-DJ-Sjv"/>
                         <outlet property="annualSalaryTextField" destination="XHw-Sb-fca" id="iSo-vr-LtD"/>
                         <outlet property="currentAgeTextField" destination="vde-ZX-k0l" id="GnI-0v-bLx"/>
-                        <outlet property="currentBalanceTextField" destination="YYg-r5-z33" id="tm6-8u-EUe"/>
-                        <outlet property="employerMatchTextField" destination="7bC-Ja-LLG" id="e13-lh-KsD"/>
-                        <outlet property="employerMatchTotalTextField" destination="k3m-n8-EuU" id="6Iq-wJ-haC"/>
+                        <outlet property="currentBalanceTextField" destination="p62-IJ-g6c" id="95N-nr-YfK"/>
+                        <outlet property="employerMatchMaxPercentageTextField" destination="k3m-n8-EuU" id="L8C-Ug-K9D"/>
+                        <outlet property="employerMatchPercentageTextField" destination="7bC-Ja-LLG" id="1D7-pk-q3Z"/>
                         <outlet property="percentToContributeTextField" destination="7hw-lY-vRy" id="iyR-ow-w6m"/>
                         <segue destination="fcE-iZ-GYV" kind="show" identifier="Show 401k Results" id="ubR-zj-rSg"/>
                     </connections>
@@ -637,7 +688,7 @@
         <!--401K Results-->
         <scene sceneID="Af6-AQ-c3E">
             <objects>
-                <viewController id="fcE-iZ-GYV" customClass="_01kCalculatorResultsViewController" customModule="EZFinance" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fcE-iZ-GYV" customClass="CalculatorResultsViewController" customModule="EZFinance" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SH7-f0-77T">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -679,7 +730,7 @@
                     <navigationItem key="navigationItem" title="401K Results" id="KFh-rM-ZKV"/>
                     <connections>
                         <outlet property="withEmployerMatchLabel" destination="hu2-Yb-IKG" id="vXk-UI-6QQ"/>
-                        <outlet property="withoutEmployerMatchLabel" destination="npA-Gh-hGX" id="kFx-K4-crO"/>
+                        <outlet property="withoutEmployerMatchLabel" destination="GNO-lj-GPm" id="GOu-bY-tnY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oml-bf-TM7" userLabel="First Responder" sceneMemberID="firstResponder"/>

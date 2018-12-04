@@ -23,6 +23,62 @@ class CalculatorViewController: UIViewController {
     
     @IBAction func calculateButtonPressed(_ sender: Any) {
         // Perform the segue
+        if Double(self.percentToContributeTextField.text!) != nil {
+            percentToContribute = percentToContributeTextField.text!
+        }
+        else {
+            showAlertMessage(messageHeader: "Unrecognized Input", messageBody: "Please enter a valid % to Contribute! (Numbers Only, Ex: 10 for 10%")
+        }
+        if Double(self.annualSalaryTextField.text!) != nil {
+            annualSalary = annualSalaryTextField.text!
+        }
+        else {
+            showAlertMessage(messageHeader: "Unrecognized Input", messageBody: "Please enter a valid Annual Salary! (Numbers Only, Ex: 100000 for $100k")
+        }
+        if Double(self.annualSalaryIncreaseTextField.text!) != nil {
+            annualSalaryIncrease = annualSalaryIncreaseTextField.text!
+        }
+        else {
+            showAlertMessage(messageHeader: "Unrecognized Input", messageBody: "Please enter a valid Annual Salary Increase! (Numbers Only, Ex: 3 for 3%")
+        }
+        if Double(self.currentAgeTextField.text!) != nil {
+            currentAge = currentAgeTextField.text!
+        }
+        else {
+            showAlertMessage(messageHeader: "Unrecognized Input", messageBody: "Please enter a valid Current Age!")
+        }
+        if Double(self.ageOfRetirementTextField.text!) != nil {
+            ageOfRetirement = ageOfRetirementTextField.text!
+        }
+        else {
+            showAlertMessage(messageHeader: "Unrecognized Input", messageBody: "Please enter a valid Age of Retirement!")
+        }
+        if Double(self.currentBalanceTextField.text!) != nil {
+            currentBalance = currentBalanceTextField.text!
+        }
+        else {
+            showAlertMessage(messageHeader: "Unrecognized Input", messageBody: "Please enter a valid Current Balance! (Numbers Only, Ex: 10000 for $10k")
+        }
+        if Double(self.annualRateOfReturnTextField.text!) != nil {
+            annualRateOfReturn = annualRateOfReturnTextField.text!
+        }
+        else {
+            showAlertMessage(messageHeader: "Unrecognized Input", messageBody: "Please enter a valid ARR! (Numbers Only, Ex: 7 for 7%")
+        }
+        if Double(self.employerMatchPercentageTextField.text!) != nil {
+            employerMatchPercentage = employerMatchPercentageTextField.text!
+        }
+        else {
+            showAlertMessage(messageHeader: "Unrecognized Input", messageBody: "Please enter a valid Employer Match %! (Numbers Only, Ex: 50 for 50%")
+        }
+        if Double(self.employerMatchMaxPercentageTextField.text!) != nil {
+            employerMatchMaxPercentage = employerMatchMaxPercentageTextField.text!
+        }
+        else {
+            showAlertMessage(messageHeader: "Unrecognized Input", messageBody: "Please enter a valid Employer Match Max %! (Numbers Only, Ex: 6 for 6%")
+        }
+        
+        infoToPass = [percentToContribute, annualSalary, annualSalaryIncrease, currentAge, ageOfRetirement, currentBalance, annualRateOfReturn, employerMatchPercentage, employerMatchMaxPercentage]
         performSegue(withIdentifier: "Show 401k Results", sender: self)
     }
     
@@ -41,62 +97,7 @@ class CalculatorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //if let amount = Double(self.amountTextField.text!) {
-        if Double(self.percentToContributeTextField.text!) != nil {
-            percentToContribute = percentToContributeTextField.text!
-        }
-        else {
-            showAlertMessage(messageHeader: "Unrecognized Input", messageBody: "Please enter a valid number!")
-        }
-        if Double(self.annualSalaryTextField.text!) != nil {
-            annualSalary = annualSalaryTextField.text!
-        }
-        else {
-            showAlertMessage(messageHeader: "Unrecognized Input", messageBody: "Please enter a valid number!")
-        }
-        if Double(self.annualSalaryIncreaseTextField.text!) != nil {
-            annualSalaryIncrease = annualSalaryIncreaseTextField.text!
-        }
-        else {
-            showAlertMessage(messageHeader: "Unrecognized Input", messageBody: "Please enter a valid number!")
-        }
-        if Double(self.currentAgeTextField.text!) != nil {
-            currentAge = currentAgeTextField.text!
-        }
-        else {
-            showAlertMessage(messageHeader: "Unrecognized Input", messageBody: "Please enter a valid number!")
-        }
-        if Double(self.ageOfRetirementTextField.text!) != nil {
-            ageOfRetirement = ageOfRetirementTextField.text!
-        }
-        else {
-            showAlertMessage(messageHeader: "Unrecognized Input", messageBody: "Please enter a valid number!")
-        }
-        if Double(self.currentBalanceTextField.text!) != nil {
-            currentBalance = currentBalanceTextField.text!
-        }
-        else {
-            showAlertMessage(messageHeader: "Unrecognized Input", messageBody: "Please enter a valid number!")
-        }
-        if Double(self.annualRateOfReturnTextField.text!) != nil {
-            annualRateOfReturn = annualRateOfReturnTextField.text!
-        }
-        else {
-            showAlertMessage(messageHeader: "Unrecognized Input", messageBody: "Please enter a valid number!")
-        }
-        if Double(self.employerMatchPercentageTextField.text!) != nil {
-            employerMatchPercentage = employerMatchPercentageTextField.text!
-        }
-        else {
-            showAlertMessage(messageHeader: "Unrecognized Input", messageBody: "Please enter a valid number!")
-        }
-        if Double(self.employerMatchMaxPercentageTextField.text!) != nil {
-            employerMatchMaxPercentage = employerMatchMaxPercentageTextField.text!
-        }
-        else {
-            showAlertMessage(messageHeader: "Unrecognized Input", messageBody: "Please enter a valid number!")
-        }
-        
-        infoToPass = [percentToContribute, annualSalary, annualSalaryIncrease, currentAge, ageOfRetirement, currentBalance, annualRateOfReturn, employerMatchPercentage, employerMatchMaxPercentage]
+       
         
     }
     
